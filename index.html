@@ -1,14 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto Number Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <main class="app-container">
+        <header class="app-header">
+            <h1>Lotto Number Generator</h1>
+            <p>Your lucky numbers are just a click away!</p>
+        </header>
+        <section class="lotto-controls">
+            <button id="generate-btn" class="lotto-button">Generate Numbers</button>
+        </section>
+        <section id="lotto-display" class="lotto-display-container">
+            <!-- Lotto balls will be inserted here by JavaScript -->
+        </section>
+        <section class="history-container">
+            <h2>History</h2>
+            <ul id="history-list" class="history-list">
+                <!-- History of generated numbers will be here -->
+            </ul>
+        </section>
+    </main>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
