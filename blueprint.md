@@ -15,40 +15,35 @@ This project is a web-based lottery number generator. It provides users with a s
     *   A central "Generate Numbers" button to initiate the lottery draw.
     *   A display area where the selected numbers appear.
     *   A history section to view previously generated number sets.
+    *   **Theme Toggle:** A dedicated button to switch between Dark and Light modes.
 *   **Visual Design:**
-    *   **Theme:** A modern and clean aesthetic with a premium feel.
-    *   **Color Palette:** A vibrant and energetic color scheme.
-    *   **Typography:** Expressive fonts to create a clear visual hierarchy.
+    *   **Theme:** Support for both Light (default) and Dark modes using CSS variables.
+    *   **Color Palette:** A vibrant and energetic color scheme, adapted for both themes.
+    *   **Typography:** Expressive fonts (Poppins) to create a clear visual hierarchy.
     *   **Layout:** A responsive, mobile-first design that works across all screen sizes.
     *   **Effects:**
         *   Subtle noise texture on the background.
         *   Multi-layered drop shadows for depth.
         *   "Glow" effects on interactive elements like the button.
 *   **Technology:**
-    *   **Web Components:** A `<lotto-ball>` custom element is used to display each number, encapsulating its style and behavior.
-    *   **Modern CSS:** Utilizes CSS Variables, `:has()`, and modern color spaces for a flexible and maintainable stylesheet.
-    *   **ES Modules:** JavaScript is organized into modules for better code structure.
+    *   **Web Components:** A `<lotto-ball>` custom element is used to display each number.
+    *   **Modern CSS:** Utilizes CSS Variables and `data-theme` attribute for theme switching.
+    *   **Persistence:** Saves user theme preference in `localStorage`.
 
 ## Plan for Current Change
 
-**Objective:** Transform the initial "Hello World" page into a fully functional and visually appealing Lotto Number Generator application.
+**Objective:** Implement Dark Mode and White (Light) Mode with a toggle functionality and persist user preference.
 
 **Steps:**
 
-1.  **Update `index.html`:**
-    *   Set the page title to "Lotto Number Generator".
-    *   Create the main application structure, including a header, a controls section, a display area for the numbers, and a history section.
-    *   Link the CSS and JavaScript files.
-
-2.  **Update `style.css`:**
-    *   Implement the full visual design as outlined above.
-    *   Style all the new elements from `index.html`, including the container, button, number display area, and history list.
-    *   Create the styles for the `<lotto-ball>` web component.
-    *   Ensure the layout is responsive and looks great on mobile devices.
-
+1.  **Update `style.css`:**
+    *   Define CSS variables for both themes in `:root` and `[data-theme="dark"]`.
+    *   Apply transitions for smooth theme switching.
+    *   Style the new theme toggle button.
+2.  **Update `index.html`:**
+    *   Add the theme toggle button and icon container.
 3.  **Update `main.js`:**
-    *   Define the `<lotto-ball>` custom element class. This component will be responsible for rendering a single lottery number with its associated styling.
-    *   Implement the core number generation logic.
-    *   Add an event listener to the "Generate Numbers" button to trigger the number generation and display update.
-    *   Implement the logic to add newly generated numbers to the history list.
+    *   Implement logic to detect current theme, toggle between themes, update UI icons, and save/load preference from `localStorage`.
+4.  **Deployment:**
+    *   Push the updated code to the GitHub repository.
 

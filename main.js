@@ -1,3 +1,24 @@
+// Theme Management
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// Initialize theme from localStorage
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+
+function setTheme(theme) {
+    htmlElement.setAttribute('data-theme', theme);
+    themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    localStorage.setItem('theme', theme);
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+});
+
 class LottoBall extends HTMLElement {
     constructor() {
         super();
